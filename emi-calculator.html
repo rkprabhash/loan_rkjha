@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator &amp; Loan Eligibility Calculator | RK Jha Group</title>
+<meta name="description" content="Free EMI calculator for personal, home, business, and car loans. See your monthly EMI, total interest, amortization schedule, and check your loan eligibility instantly.">
+<link rel="canonical" href="https://loans.rkjhagroup.in/emi-calculator.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1730'/%3E%3Cpath d='M32 10 L52 20 V32 C52 44 43 52 32 56 C21 52 12 44 12 32 V20 Z' fill='none' stroke='%23D4AF37' stroke-width='3'/%3E%3Ctext x='32' y='39' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3ERK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme:{ extend:{
+    colors:{ navy:{950:'#050B18',900:'#0A1730',800:'#0F2049',700:'#152C61'}, royal:{600:'#1E4FD9',500:'#2E63F6',400:'#5C86FF'}, emerald:{600:'#03875A',500:'#0BA968',100:'#E3F9EE'}, gold:{600:'#B8912E',500:'#D4AF37',100:'#FBF3DC'}, ink:{900:'#0B1526',700:'#31405C',500:'#5C6A87'}, grey:{50:'#F7F9FC',100:'#F1F4F9',200:'#E6EAF2',400:'#9AA6BF'} },
+    fontFamily:{ sans:['Inter','sans-serif'], display:['Plus Jakarta Sans','sans-serif'] } } } }
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-ink-900 antialiased">
+
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-grey-200">
+  <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <svg width="42" height="42" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0A1730"/><path d="M32 10 L52 20 V32 C52 44 43 52 32 56 C21 52 12 44 12 32 V20 Z" stroke="#D4AF37" stroke-width="3" fill="none"/><text x="32" y="39" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">RK</text></svg>
+      <div class="leading-tight"><p class="font-display font-extrabold text-lg text-navy-900 tracking-tight">RK Jha Group</p><p class="text-[11px] font-semibold text-gold-600 tracking-wide -mt-0.5">TRUSTED FINANCIAL MARKETPLACE</p></div>
+    </a>
+    <ul class="hidden lg:flex items-center gap-1 font-medium text-sm text-ink-700">
+      <li><a href="loans/index.html" class="block px-4 py-2 rounded-full hover:bg-grey-100 hover:text-navy-900 transition">Loans</a></li>
+      <li><a href="insurance/index.html" class="block px-4 py-2 rounded-full hover:bg-grey-100 hover:text-navy-900 transition">Insurance</a></li>
+      <li><a href="emi-calculator.html" class="block px-4 py-2 rounded-full bg-grey-100 text-navy-900">Calculators</a></li>
+      <li><a href="partner-banks.html" class="block px-4 py-2 rounded-full hover:bg-grey-100 hover:text-navy-900 transition">Partners</a></li>
+      <li><a href="blog/index.html" class="block px-4 py-2 rounded-full hover:bg-grey-100 hover:text-navy-900 transition">Resources</a></li>
+      <li><a href="about.html" class="block px-4 py-2 rounded-full hover:bg-grey-100 hover:text-navy-900 transition">About</a></li>
+    </ul>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="tel:+917004200836" class="btn btn-outline btn-sm">Call Now</a>
+      <a href="contact.html#apply" class="btn btn-primary btn-sm">Apply in 2 Minutes</a>
+    </div>
+    <button id="mobileNavToggle" class="lg:hidden p-2 rounded-lg hover:bg-grey-100" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0A1730" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+<div id="mobileNavPanel" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-50 translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto">
+  <div class="flex items-center justify-between p-5 border-b border-grey-200"><p class="font-display font-bold text-navy-900">Menu</p><button data-close-nav class="p-2 rounded-lg hover:bg-grey-100" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#0A1730" stroke-width="2"/></svg></button></div>
+  <div class="p-5 space-y-2">
+    <a data-close-nav href="loans/index.html" class="block py-3 font-semibold text-navy-900 border-t border-grey-100">Loans</a>
+    <a data-close-nav href="insurance/index.html" class="block py-3 font-semibold text-navy-900 border-t border-grey-100">Insurance</a>
+    <a data-close-nav href="about.html" class="block py-3 font-semibold text-navy-900 border-t border-grey-100">About</a>
+    <a data-close-nav href="contact.html" class="block py-3 font-semibold text-navy-900 border-t border-grey-100">Contact</a>
+    <a data-close-nav href="contact.html#apply" class="btn btn-primary w-full mt-4">Apply in 2 Minutes</a>
+  </div>
+</div>
+
+<div class="bg-grey-50 border-b border-grey-200">
+  <div class="max-w-7xl mx-auto px-6 py-3 text-xs text-ink-500 flex items-center gap-2">
+    <a href="index.html" class="hover:text-royal-600">Home</a><span>/</span><span class="text-navy-900 font-medium">EMI &amp; Eligibility Calculator</span>
+  </div>
+</div>
+
+<main>
+<section class="bg-navy-radial py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+    <span class="badge badge-gold">Free Tool · No Sign-up</span>
+    <h1 class="font-display font-extrabold text-4xl md:text-5xl text-white mt-5">EMI &amp; Eligibility Calculator</h1>
+    <p class="text-grey-200 text-lg mt-4 max-w-2xl mx-auto">Instantly calculate your monthly EMI, total interest and how much you're likely eligible to borrow — for any loan type.</p>
+  </div>
+</section>
+
+<!-- Loan type tabs -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="inline-flex bg-grey-100 rounded-full p-1 flex-wrap" data-tabs id="loanTypeTabs">
+      <button data-tab-btn="pl" aria-selected="true" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold">Personal Loan</button>
+      <button data-tab-btn="hl" aria-selected="false" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold">Home Loan</button>
+      <button data-tab-btn="bl" aria-selected="false" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold">Business Loan</button>
+      <button data-tab-btn="cl" aria-selected="false" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold">Car Loan</button>
+    </div>
+
+    <div class="card-premium p-6 md:p-10 mt-8 grid lg:grid-cols-2 gap-10" data-emi-widget>
+      <div>
+        <div class="flex justify-between items-center mb-1"><label class="input-label !mb-0">Loan Amount</label><span class="font-display font-bold text-navy-900" data-emi-amount-out>₹25,00,000</span></div>
+        <input type="range" min="50000" max="10000000" step="10000" value="2500000" class="range-slider w-full" data-emi-amount>
+
+        <div class="flex justify-between items-center mb-1 mt-6"><label class="input-label !mb-0">Interest Rate (p.a.)</label><span class="font-display font-bold text-navy-900" data-emi-rate-out>10.5%</span></div>
+        <input type="range" min="7" max="24" step="0.1" value="10.5" class="range-slider w-full" data-emi-rate>
+
+        <div class="flex justify-between items-center mb-1 mt-6"><label class="input-label !mb-0">Tenure</label><span class="font-display font-bold text-navy-900" data-emi-tenure-out>60 mo</span></div>
+        <input type="range" min="6" max="360" step="6" value="60" class="range-slider w-full" data-emi-tenure>
+
+        <div class="grid grid-cols-3 gap-3 mt-8 pt-6 border-t border-grey-100 text-center">
+          <div><p class="text-xs text-ink-500">Principal</p><p class="font-semibold text-navy-900 text-sm mt-1" data-emi-principal-total>₹0</p></div>
+          <div><p class="text-xs text-ink-500">Interest</p><p class="font-semibold text-navy-900 text-sm mt-1" data-emi-interest-total>₹0</p></div>
+          <div><p class="text-xs text-ink-500">Total Payable</p><p class="font-semibold text-navy-900 text-sm mt-1" data-emi-total>₹0</p></div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center bg-grey-50 rounded-2xl p-8">
+        <div class="w-32 h-32 rounded-full" data-emi-donut><div class="w-24 h-24 bg-white rounded-full m-4"></div></div>
+        <p class="text-xs text-ink-500 mt-5">Monthly EMI</p>
+        <p class="font-display font-extrabold text-4xl text-navy-900" data-emi-result>₹0</p>
+        <div class="flex gap-4 mt-3 text-xs">
+          <span class="flex items-center gap-1 text-emerald-600"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Principal</span>
+          <span class="flex items-center gap-1 text-gold-600"><span class="w-2 h-2 rounded-full bg-gold-500"></span>Interest</span>
+        </div>
+        <a href="contact.html#apply" class="btn btn-primary w-full mt-6">Apply for This Loan →</a>
+      </div>
+    </div>
+
+    <!-- Amortization schedule -->
+    <div class="mt-10">
+      <div class="flex items-center justify-between">
+        <h2 class="font-display font-bold text-xl text-navy-900">Yearly Amortization Schedule</h2>
+        <button id="toggleAmort" class="text-royal-600 text-sm font-semibold">Show Full Schedule ↓</button>
+      </div>
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full text-sm border-collapse min-w-[560px]">
+          <thead><tr class="text-left text-ink-500 border-b border-grey-200"><th class="py-3 font-semibold">Year</th><th class="py-3 font-semibold">Principal Paid</th><th class="py-3 font-semibold">Interest Paid</th><th class="py-3 font-semibold">Balance</th></tr></thead>
+          <tbody id="amortBody" class="divide-y divide-grey-100 text-ink-700"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Loan type presets adjust slider defaults/ranges
+  const presets = {
+    pl: { amount:500000, min:50000, max:4000000, rate:10.5, rmin:10.5, rmax:24, tenure:36, tmax:60 },
+    hl: { amount:5000000, min:500000, max:100000000, rate:8.35, rmin:8.35, rmax:12, tenure:240, tmax:360 },
+    bl: { amount:2500000, min:100000, max:50000000, rate:11.9, rmin:11.9, rmax:20, tenure:60, tmax:84 },
+    cl: { amount:800000, min:100000, max:10000000, rate:9.25, rmin:9.25, rmax:15, tenure:60, tmax:84 },
+  };
+  document.querySelectorAll('#loanTypeTabs [data-tab-btn]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const p = presets[btn.getAttribute('data-tab-btn')];
+      const widget = document.querySelector('[data-emi-widget]');
+      const amountEl = widget.querySelector('[data-emi-amount]');
+      const rateEl = widget.querySelector('[data-emi-rate]');
+      const tenureEl = widget.querySelector('[data-emi-tenure]');
+      amountEl.min = p.min; amountEl.max = p.max; amountEl.value = p.amount;
+      rateEl.min = p.rmin; rateEl.max = p.rmax; rateEl.value = p.rate;
+      tenureEl.max = p.tmax; tenureEl.value = p.tenure;
+      [amountEl, rateEl, tenureEl].forEach(el=> el.dispatchEvent(new Event('input')));
+      renderAmort();
+    });
+  });
+
+  function renderAmort(){
+    const widget = document.querySelector('[data-emi-widget]');
+    const amount = parseFloat(widget.querySelector('[data-emi-amount]').value);
+    const rate = parseFloat(widget.querySelector('[data-emi-rate]').value);
+    const tenure = parseFloat(widget.querySelector('[data-emi-tenure]').value);
+    const r = (rate/12)/100;
+    const emi = r === 0 ? amount/tenure : (amount * r * Math.pow(1+r,tenure)) / (Math.pow(1+r,tenure)-1);
+    let balance = amount;
+    const years = Math.ceil(tenure/12);
+    const rows = [];
+    for(let y=1; y<=years; y++){
+      let yearPrincipal = 0, yearInterest = 0;
+      const monthsThisYear = Math.min(12, tenure - (y-1)*12);
+      for(let m=0; m<monthsThisYear; m++){
+        const interestPortion = balance * r;
+        const principalPortion = emi - interestPortion;
+        yearInterest += interestPortion;
+        yearPrincipal += principalPortion;
+        balance -= principalPortion;
+      }
+      rows.push({ year:y, principal:yearPrincipal, interest:yearInterest, balance:Math.max(balance,0) });
+    }
+    const body = document.getElementById('amortBody');
+    const collapsed = rows.length > 5 && !window.__amortExpanded;
+    const visible = collapsed ? rows.slice(0,5) : rows;
+    body.innerHTML = visible.map(r=>`<tr><td class="py-3">Year ${r.year}</td><td class="py-3">₹${Math.round(r.principal).toLocaleString('en-IN')}</td><td class="py-3">₹${Math.round(r.interest).toLocaleString('en-IN')}</td><td class="py-3">₹${Math.round(r.balance).toLocaleString('en-IN')}</td></tr>`).join('');
+    document.getElementById('toggleAmort').style.display = rows.length > 5 ? 'block' : 'none';
+  }
+  document.getElementById('toggleAmort')?.addEventListener('click', (e)=>{
+    window.__amortExpanded = !window.__amortExpanded;
+    e.target.textContent = window.__amortExpanded ? 'Show Less ↑' : 'Show Full Schedule ↓';
+    renderAmort();
+  });
+  document.addEventListener('DOMContentLoaded', renderAmort);
+  document.querySelector('[data-emi-widget]')?.addEventListener('input', renderAmort);
+</script>
+
+<!-- Eligibility Calculator -->
+<section class="py-20 bg-mesh-light">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto reveal"><p class="section-eyebrow text-emerald-600">Eligibility Calculator</p><h2 class="font-display font-extrabold text-3xl text-navy-900 mt-3">How much can you borrow?</h2></div>
+    <div class="card-premium p-8 md:p-12 mt-10 grid md:grid-cols-2 gap-10 items-center" data-eligibility-widget>
+      <div>
+        <div><label class="input-label">Monthly Net Income (₹)</label><input type="range" min="20000" max="1000000" step="5000" value="120000" class="range-slider w-full" data-elig-income></div>
+        <div class="mt-5"><label class="input-label">Existing EMIs / Obligations (₹)</label><input type="range" min="0" max="200000" step="1000" value="10000" class="range-slider w-full" data-elig-obligations></div>
+        <div class="grid grid-cols-2 gap-4 mt-5">
+          <div><label class="input-label">Tenure (months)</label><input type="range" min="12" max="360" step="6" value="60" class="range-slider w-full" data-elig-tenure></div>
+          <div><label class="input-label">Rate (% p.a.)</label><input type="range" min="7" max="24" step="0.5" value="11" class="range-slider w-full" data-elig-rate></div>
+        </div>
+      </div>
+      <div class="bg-emerald-100 rounded-2xl p-8 text-center">
+        <p class="text-sm text-emerald-700 font-semibold">Estimated Eligible Amount</p>
+        <p class="font-display font-extrabold text-4xl text-emerald-700 mt-2" data-elig-result>₹0</p>
+        <div class="h-2 bg-white/70 rounded-full mt-5 overflow-hidden"><div class="h-full bg-emerald-600 rounded-full transition-all" style="width:0%" data-elig-bar></div></div>
+        <a href="contact.html#apply" class="btn btn-emerald w-full mt-7">Get Exact Offer →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="font-display font-extrabold text-2xl text-navy-900">Want a rate-locked, lender-verified offer?</h2>
+    <p class="text-ink-500 mt-2">Our advisors can get you an exact number within 30 minutes.</p>
+    <a href="contact.html#apply" class="btn btn-primary mt-6">Talk to an Advisor →</a>
+  </div>
+</section>
+</main>
+
+<footer class="bg-navy-950 text-grey-200 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="pt-6 text-[11px] leading-relaxed text-grey-400/80 flex flex-wrap items-center justify-between gap-4">
+      <p>© <span data-year>2026</span> RK Jha Group. Calculator results are indicative estimates, not a loan offer or sanction.</p>
+      <a href="index.html" class="underline hover:text-white text-sm">Back to Home</a>
+    </div>
+  </div>
+</footer>
+
+<a id="waFloat" href="https://wa.me/917004200836" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-24 md:bottom-8 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M20.5 3.5A11 11 0 003.6 17.3L2 22l4.8-1.6A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.8-2.1-1.5-.5-.6-1-1.2-1.1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.5-.4h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.1 1.6 2.5 3.9 3.4.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1z"/></svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
